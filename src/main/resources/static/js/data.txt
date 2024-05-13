@@ -7,7 +7,7 @@
       "Business": "Business type 1",
       "Policy": "Jesse Thomas",
       "Premium": "$1200",
-      "Status": "In progress",
+      "Status": "In progresssss",
       "Updated": "25/04/2020"
     },{
       "id": "2",

@@ -20,9 +20,9 @@ spring:
             cache: false
     # 데이터베이스 설정 
     datasource:
-        url: jdbc:mysql://127.0.0.1:3306/examplesdb?userSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
-        username: urstory
-        password: u1234
+        url: jdbc:mysql://nasdaq-db.clcgk04eeism.ap-northeast-2.rds.amazonaws.com:3306/nasdaq?userSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+        username: admin
+        password: admin1234
         driver-class-name: com.mysql.cj.jdbc.Driver
     # jpa 설정 
     jpa:
@@ -32,6 +32,8 @@ spring:
             hibernate:
                 show_sql: true
                 format_sql: true
+                dialect:
+                    org.hibernate.dialect.MySQLDialect
    
     sql:
         init:
@@ -44,7 +46,8 @@ spring:
             cache: false
         thymeleaf:
             cache: false
-    
+
+
 
             
         
