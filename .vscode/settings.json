@@ -3,5 +3,6 @@
     "cmake.configureOnOpen": true,
     "cSpell.languageSettings": [
         
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
