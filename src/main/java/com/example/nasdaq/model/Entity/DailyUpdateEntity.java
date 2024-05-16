@@ -41,7 +41,7 @@ public class DailyUpdateEntity {
 
     private String news_summary;
 
-    private Double news_sentiment;
+    private String news_sentiment;
 
     private int market_cap;
 
