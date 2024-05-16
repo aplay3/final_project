@@ -22113,8 +22113,7 @@ code {
 }
 
 .card-inverse-primary {
-  background: rgba(75, 73, 172, 0.2);
-  border: 1px solid #45439e;
+  
   color: #393783;
 }
 
@@ -22143,8 +22142,7 @@ code {
 }
 
 .card-inverse-danger {
-  background: rgba(255, 71, 71, 0.2);
-  border: 1px solid #eb4141;
+  
   color: #c23636;
 }
 
