@@ -29,7 +29,7 @@ public class Nasdaq100ServiceImpl implements Nasdaq100Service{
     @Override
     public List<Nasdaq100Dto> getAllNasdaq100() {
         // TODO Auto-generated method stub
-        List<>
+        
         return null;
     }
 
