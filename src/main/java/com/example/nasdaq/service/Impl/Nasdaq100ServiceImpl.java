@@ -30,10 +30,6 @@ public class Nasdaq100ServiceImpl implements Nasdaq100Service{
     @Override
     public List<Nasdaq100Dto> getAllNasdaq100() {
         // TODO Auto-generated method stub
-<<<<<<< HEAD
-        // List<>
-        return null;
-=======
         List<Nasdaq100Entity> entities = nasdaq100Dao.getAllNasdaq100();
         List<Nasdaq100Dto> dtos = new ArrayList<>();
         for (Nasdaq100Entity entity : entities) {
@@ -44,7 +40,6 @@ public class Nasdaq100ServiceImpl implements Nasdaq100Service{
             dtos.add(dto);
         }
         return dtos;
->>>>>>> origin/dev
     }
 
     
