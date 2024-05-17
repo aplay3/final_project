@@ -1,5 +1,6 @@
 package com.example.nasdaq.service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,16 @@ public class Nasdaq100ServiceImpl implements Nasdaq100Service{
     @Override
     public List<Nasdaq100Dto> getAllNasdaq100() {
         // TODO Auto-generated method stub
-        return null;
+        List<Nasdaq100Entity> entities = nasdaq100Dao.getAllNasdaq100();
+        List<Nasdaq100Dto> dtos = new ArrayList<>();
+        for (Nasdaq100Entity entity : entities) {
+            Nasdaq100Dto dto = new Nasdaq100Dto();
+            dto.setTicker(entity.getTicker());
+            dto.setName(entity.getName());
+
+            dtos.add(dto);
+        }
+        return dtos;
     }
 
     
