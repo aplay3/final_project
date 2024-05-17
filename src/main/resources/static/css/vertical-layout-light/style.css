@@ -11765,6 +11765,8 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: 1px solid #CED4DA;
   border-radius: 0.25rem;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .dropdown-menu-left {
@@ -17002,6 +17004,10 @@ button.bg-dark:focus,
   margin-top: 0.5rem !important;
 }
 
+.mt-10 {
+  margin-top: 4rem;
+}
+
 .mr-2, .template-demo > .btn, .fc .template-demo > button, .ajax-upload-dragdrop .template-demo > .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .template-demo > .swal2-styled, .wizard > .actions .template-demo > a, .template-demo > .btn-group, .fc .template-demo > .fc-button-group,
 .template-demo > .btn-group-vertical, .template-demo > .dropdown,
 .mx-2 {
@@ -19657,8 +19663,41 @@ address p {
   line-height: .85;
 }
 
+.font-weight-large {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+
+.font-weight-large-green {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 2rem;
+  color: #00FF00;
+}
+
+.font-weight-large-red {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 2rem;
+  color: #FF0000;
+}
+
+.font-weight-large {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+.font-weight-xlarge {
+  font-weight: 700;
+  font-size: 32px;
+}
+
 .font-weight-medium {
-  font-weight: 600;
+  font-weight: 500;
+  font-size:18px;
 }
 
 .font-weight-500 {
@@ -22092,6 +22131,16 @@ code {
 
 .card.card-dark-blue:hover {
   background: #5050b2;
+}
+
+.card.card-gemini1 {
+  background: #CCE5FF;
+  color: #000000;
+}
+
+.card.card-gemini2 {
+  background: #E0F2F1;
+  color: #000000;
 }
 
 .card.card-light-blue {

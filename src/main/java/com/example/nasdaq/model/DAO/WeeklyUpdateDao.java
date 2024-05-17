@@ -8,7 +8,7 @@ import com.example.nasdaq.model.Entity.weeklyUpdatesPK;
 public interface WeeklyUpdateDao {
     
     // select
-    public WeeklyUpdateEntity getOneWeeklyInfo(weeklyUpdatesPK ticker);
+    public WeeklyUpdateEntity getOneWeeklyInfo(String ticker, String weeklydate);
 
     public List<WeeklyUpdateEntity> getAllWeeklyInfo();
 

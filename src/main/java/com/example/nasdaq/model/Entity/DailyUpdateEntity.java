@@ -1,13 +1,7 @@
 package com.example.nasdaq.model.Entity;
 
-import java.util.Date;
-
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -23,18 +17,21 @@ import lombok.ToString;
 @ToString
 @Entity(name = "DailyUpdateEntity")
 @Table(name = "daily_update")
-@IdClass(dailyUpdatesPK.class)
+// @IdClass(dailyUpdatesPK.class)
 public class DailyUpdateEntity {
     
-    @Id
-    @NotBlank
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="ticker")
-    private Nasdaq100Entity ticker;
+    // @Id
+    // @NotBlank
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name="ticker")
+    // private Nasdaq100Entity ticker;
 
-    @Id
-    @NotBlank
-    private Date dailydate;
+    // @Id
+    // @NotBlank
+    // private Date dailydate;
+
+    @EmbeddedId
+    private dailyUpdatesPK dailyUpdatesPK;
 
     @NotBlank
     private String name;
