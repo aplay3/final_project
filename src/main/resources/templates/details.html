@@ -20,11 +20,7 @@
   <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="/images/favicon.png" />
-  <style>
-    .card-body {
-      margin-bottom: 50px; /* 본문 하단 여백 추가 */
-    }
-  </style>
+
 </head>
 <body>
   <div class="container-scroller">
@@ -411,7 +407,7 @@
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h2 class="font-weight-bold">{{name}}</h2>
-                  <h5 class="font-weight-normal mb-0"><span class="text-primary">{{ticker}}</span></h5>
+                  <h5 class="font-weight-normal mb-0" id="ticker"><span class="text-primary">{{ticker}}</span></h5>
                   <h6 class="font-weight-normal mb-0"><span class="text-primary" id="today-date">{{dailydate}}</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
@@ -541,72 +537,18 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div id="Charts" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <p class="card-title">월간 시세 추이</p>
-                        <p class="font-weight-500">지난 한 달 간 {{ticker}}의 시세 추이입니다.</p>
-                        <div class="d-flex flex-wrap mb-5">
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Order value</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">12.3k</h3>
-                          </div>
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Orders</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">14k</h3>
-                          </div>
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Users</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">71.56%</h3>
-                          </div>
-                          <div class="mt-3">
-                            <p class="text-muted">Downloads</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
-                          </div>
-                        </div>
-                        <canvas id="order-chart-dark"></canvas>
-                      </div>
-                      <div class="carousel-item">
-                        <p class="card-title">주간 시세 추이</p>
-                        <p class="font-weight-500">지난 한 주 간 {{ticker}}의 시세 추이입니다.</p>
-                        <div class="d-flex flex-wrap mb-5">
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Order value</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">12.3k</h3>
-                          </div>
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Orders</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">14k</h3>
-                          </div>
-                          <div class="mr-5 mt-3">
-                            <p class="text-muted">Users</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">71.56%</h3>
-                          </div>
-                          <div class="mt-3">
-                            <p class="text-muted">Downloads</p>
-                            <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
-                          </div>
-                        </div>
-                        <canvas id="order-chart"></canvas>
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#Charts" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#Charts" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+          <script src="https://code.highcharts.com/stock/highstock.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/heikinashi.js"></script>
+          <script src="https://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+          
+          <div id="bollinger" style="height: 700px; min-width: 310px"></div>
+          <script src="/js/bollinger.js"></script>
+
+
           <!-- <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card position-relative">

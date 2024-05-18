@@ -28,6 +28,9 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
+            transaction:
+                jta:
+                    platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
         properties:
             hibernate:
                 show_sql: true

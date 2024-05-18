@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.nasdaq.model.DTO.DailyUpdateDto;
 import com.example.nasdaq.service.DailyUpdateService;
-import com.example.nasdaq.service.Nasdaq100Service;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,9 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class detailsController {
-    
-    @Autowired
-    private Nasdaq100Service nasdaq100Service;
 
     @Autowired
     private DailyUpdateService dailyUpdateService;
