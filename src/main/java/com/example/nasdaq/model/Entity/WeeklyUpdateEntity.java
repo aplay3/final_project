@@ -1,13 +1,7 @@
 package com.example.nasdaq.model.Entity;
 
-import java.util.Date;
-
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -21,18 +15,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity(name="WeeklyUpdateEntity")
 @Table(name="weekly_update")
-@IdClass(weeklyUpdatesPK.class)
+// @IdClass(weeklyUpdatesPK.class)
 public class WeeklyUpdateEntity {
     
-    @Id
-    @NotBlank
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="ticker")
-    private Nasdaq100Entity ticker;
+    // @Id
+    // @NotBlank
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name="ticker")
+    // private Nasdaq100Entity ticker;
 
-    @Id
-    @NotBlank
-    private Date weeklydate;
+    // @Id
+    // @NotBlank
+    // private Date weeklydate;
+
+    @EmbeddedId
+    private weeklyUpdatesPK weeklyUpdatesPK;
 
     @NotBlank
     private String name;
