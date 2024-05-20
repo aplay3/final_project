@@ -412,6 +412,7 @@
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h2 class="font-weight-bold">{{name}}</h2>
                   <h5 class="font-weight-normal mb-0"><span class="text-primary">{{ticker}}</span></h5>
+                  <h6 class="font-weight-normal mb-0"><span class="text-primary" id="today-date">{{dailydate}}</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -423,10 +424,12 @@
                       <div id="dropdown-items-container">
                         <script>
                           const companyData = {'MSFT': 'microsoft-corp', 'AAPL': 'apple-computer-inc', 'NVDA': 'nvidia-corp', 'GOOG': 'google-inc-c', 'GOOGL': 'google-inc', 'AMZN': 'amazon-com-inc', 'META': 'facebook-inc', 'AVGO': 'avago-technologies', 'TSLA': 'tesla-motors', 'ASML': 'asml-holdings', 'COST': 'costco-whsl-corp-new', 'PEP': 'pepsico', 'NFLX': 'netflix,-inc.', 'AZN': 'astrazeneca-plc-ads', 'AMD': 'adv-micro-device', 'LIN': 'linde-plc', 'ADBE': 'adobe-sys-inc', 'TMUS': 'metropcs-communications', 'CSCO': 'cisco-sys-inc', 'QCOM': 'qualcomm-inc', 'INTU': 'intuit', 'PDD': 'pinduoduo', 'AMAT': 'applied-matls-inc', 'TXN': 'texas-instru', 'CMCSA': 'comcast-corp-new', 'AMGN': 'amgen-inc', 'ISRG': 'intuitive-surgical-inc', 'INTC': 'intel-corp', 'HON': 'honeywell-intl', 'MU': 'micron-tech', 'BKNG': 'priceline.com-inc', 'LRCX': 'lam-research-corp', 'VRTX': 'vertex-pharm', 'ADP': 'auto-data-process', 'REGN': 'regeneron-phar.', 'ABNB': 'airbnb-inc', 'ADI': 'analog-devices', 'MDLZ': 'mondelez-international-inc', 'PANW': 'palo-alto-netwrk', 'KLAC': 'kla-tencor-corp', 'SBUX': 'starbucks-corp', 'GILD': 'gilead-sciences-inc', 'SNPS': 'synopsys-inc', 'CDNS': 'cadence-design-system-inc', 'MELI': 'mercadolibre', 'CRWD': 'crowdstrike-holdings-inc', 'PYPL': 'paypal-holdings-inc', 'MAR': 'marriott-intl', 'CTAS': 'cintas-corp', 'CSX': 'csx-corp', 'WDAY': 'workday-inc', 'NXPI': 'nxp-semiconductors', 'ORLY': 'oreilly-automotive', 'CEG': 'constellation-energy', 'PCAR': 'paccar-inc', 'MNST': 'monster-beverage', 'MRVL': 'marvell-technology-group-ltd', 'ROP': 'roper-industries', 'CPRT': 'copart-inc', 'DASH': 'doordash-inc', 'DXCM': 'dexcom', 'FTNT': 'fortinet', 'MCHP': 'microchip-technology-inc', 'AEP': 'american-electric', 'KDP': 'dr-pepper-snapple', 'ADSK': 'autodesk-inc', 'TEAM': 'atlassian-corp-plc', 'LULU': 'lululemon-athletica', 'KHC': 'kraft-foods-inc', 'PAYX': 'paychex-inc', 'ROST': 'ross-stores-inc', 'MRNA': 'moderna', 'DDOG': 'datadog-inc', 'TTD': 'trade-desk-inc', 'ODFL': 'old-dominion-freight-line-inc', 'FAST': 'fastenal-co', 'IDXX': 'idexx-laboratorie', 'EXC': 'exelon-corp', 'CHTR': 'charter-communications', 'CSGP': 'costar-group', 'GEHC': 'ge-healthcare-holding-llc', 'FANG': 'diamondback-energy-inc', 'EA': 'electronic-arts-inc', 'VRSK': 'verisk-analytics-inc', 'CCEP': 'coca-cola-ent', 'CTSH': 'cognizant-technology-solutio', 'BKR': 'baker-hughes', 'BIIB': 'biogen-idec-inc', 'XEL': 'xcel-energy', 'ON': 'on-semiconductor', 'CDW': 'cdw-corp', 'ANSS': 'ansys', 'MDB': 'mongodb', 'DLTR': 'dollar-tree-inc', 'ZS': 'zscaler-inc', 'GFS': 'globalfoundries', 'TTWO': 'take-two-interactive', 'ILMN': 'illumina,-inc.', 'WBD': 'discovery-holding-co', 'WBA': 'walgreen-co', 'SIRI': 'sirius-satellite-radio-inc'};
+                          const todayDate = document.getElementById('today-date').textContent;
+                          console.log(todayDate);
                           for (const [stockCode, companyName] of Object.entries(companyData)) {
                             const dropdownItem = document.createElement('a');
                             dropdownItem.classList.add('dropdown-item');
-                            dropdownItem.href = '#';
+                            dropdownItem.href = `/v1/nasdaq/details?ticker=${stockCode}&dailydate=${todayDate}`;
                             dropdownItem.textContent = `${companyName} - ${stockCode}`;
                             document.getElementById('dropdown-items-container').appendChild(dropdownItem);
                           }
@@ -447,11 +450,11 @@
                   <div class="weather-info">
                     <div class="d-flex">
                       <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
+                        <h2 class="mb-0 font-weight-normal" id="today-date">{{dailydate}}</h2>
                       </div>
                       <div class="ml-2">
-                        <h4 class="location font-weight-normal">Bangalore</h4>
-                        <h6 class="font-weight-normal">India</h6>
+                        <h4 class="location font-weight-normal">Seoul</h4>
+                        <h6 class="font-weight-normal">Korea</h6>
                       </div>
                     </div>
                   </div>
@@ -463,8 +466,8 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="font-weight-500 mb-4">오늘의 PER</p>
-                      <p class="fs-30 mb-2">28.57</p>
+                      <p class="font-weight-medium mb-4">오늘의 PER</p>
+                      <p class="font-weight-xlarge mb-2">28.57</p>
                       <!-- <p>10.00% (30 days)</p> -->
                     </div>
                   </div>
@@ -472,8 +475,8 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="font-weight-500 mb-4">오늘의 PBR</p>
-                      <p class="fs-30 mb-2">38.74</p>
+                      <p class="font-weight-medium mb-4">오늘의 PBR</p>
+                      <p class="font-weight-xlarge mb-2">38.74</p>
                       <!-- <p>22.00% (30 days)</p> -->
                     </div>
                   </div>
@@ -483,10 +486,8 @@
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
                     <div class="card-body">
-                      <p class="font-weight-500 mb-4">오늘의 기업가치</p>
-                      <div class="value-container">
-                        <p class="fs-30 mb-2">2.91조</p>
-                      </div>
+                      <p class="font-weight-medium mb-4">오늘의 기업가치</p>
+                        <p class="font-weight-xlarge mb-2">2.91조</p>
                       <!-- <p>2.00% (30 days)</p> -->
                     </div>
                   </div>
@@ -494,8 +495,8 @@
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
-                      <p class="font-weight-500 mb-4">오늘의 시가총액</p>
-                      <p class="fs-30 mb-2">2.87조</p>
+                      <p class="font-weight-medium mb-4">오늘의 시가총액</p>
+                      <p class="font-weight-xlarge mb-2">2.87조</p>
                       <!-- <p>0.22% (30 days)</p> -->
                     </div>
                   </div>
@@ -507,17 +508,36 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card card-gemini1">
                 <div class="card-body">
-                    <p class="card-title">오늘의 {{ticker}} 뉴스 요약</p>
-                    <p class="font-weight-500">{{news_summary}}</p>
+                  <p class="font-weight-large">오늘의 {{ticker}} 뉴스 요약</p>
+                  <div class="card">
+                    <div class="card-body">
+                      <p class="font-weight-medium">{{news_summary}}<br><br></p>
+                      <p class="font-weight-large" id="sentiment-text">{{news_sentiment}}</p>
+                      <script>
+                        const sentimentText = document.getElementById('sentiment-text');
+                        const newsSentiment = document.getElementById('sentiment-text').innerText; // Replace with your actual sentiment data
+                        console.log(newsSentiment);
+                        if (newsSentiment === "positive") {
+                          sentimentText.innerHTML = "Looks <span style='color: green;'>" + newsSentiment + "</span> today!<br><br>Consider getting some!";
+                        } else {
+                          sentimentText.innerHTML = "Looks <span style='color: red;'>" + newsSentiment + "</span> today..<br><br>Better stay calm!";
+                        }
+                      </script>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card card-gemini2">
                 <div class="card-body">
-                    <p class="card-title">{{ticker}} 2024 1분기 공시리포트 요약</p>
-                    <p class="font-weight-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.</p>
-                </div>
+                    <p class="font-weight-large">{{ticker}} 2024 1분기 공시리포트 요약</p>
+                    <div class="card">
+                      <div class="card-body">
+                    <p class="font-weight-medium">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ut est eligendi, odio odit iure aspernatur molestiae cum dolor unde reiciendis distinctio! Provident corporis quidem ex sunt delectus modi minima.</p>
+                      </div>
+                    </div>    
+                  </div>
               </div>
             </div>
           </div>

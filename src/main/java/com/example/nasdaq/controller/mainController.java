@@ -11,4 +11,8 @@ public class mainController {
     public String mainPage(){
         return "index";
     }
+    @GetMapping("/calendar")
+    public String move_calendar(){
+        return "calendar";
+    }
 }

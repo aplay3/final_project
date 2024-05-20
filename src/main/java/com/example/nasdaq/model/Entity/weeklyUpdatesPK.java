@@ -1,8 +1,8 @@
 package com.example.nasdaq.model.Entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode
+@Embeddable
 public class weeklyUpdatesPK implements Serializable{
     private String ticker;
-    private Date weeklydate;
+    private String weeklydate;
 }
