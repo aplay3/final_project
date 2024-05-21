@@ -28,24 +28,24 @@ public class mainController {
     @GetMapping("/index")
     public String mainPage(Model model){
         
-        List<DailyUpdateDto> positive_news = new ArrayList<>();
-        List<DailyUpdateDto> negative_news =  new ArrayList<>();
+        // List<DailyUpdateDto> positive_news = new ArrayList<>();
+        // List<DailyUpdateDto> negative_news =  new ArrayList<>();
         List<PredictpriceDto> postiive_dtos = predictpriceservice.getTop3predict_price();
         List<PredictpriceDto> negative_dtos = predictpriceservice.getButtom3predict_price();
         
-        for(PredictpriceDto dto:postiive_dtos){
-            DailyUpdateDto Ddto = dailyUpdateService.getOneDailyInfo(dto.getTicker(), "2024-05-20");
-            positive_news.add(Ddto);
+        // for(PredictpriceDto dto:postiive_dtos){
+        //     DailyUpdateDto Ddto = dailyUpdateService.getOneDailyInfo(dto.getTicker(), "2024-05-20");
+        //     positive_news.add(Ddto);
 
-        }
-        for(PredictpriceDto dto:negative_dtos){
-            DailyUpdateDto Ddto = dailyUpdateService.getOneDailyInfo(dto.getTicker(), "2024-05-20");
-            negative_news.add(Ddto);
-        }
+        // }
+        // for(PredictpriceDto dto:negative_dtos){
+        //     DailyUpdateDto Ddto = dailyUpdateService.getOneDailyInfo(dto.getTicker(), "2024-05-20");
+        //     negative_news.add(Ddto);
+        // }
         model.addAttribute("price", negative_dtos);
         model.addAttribute("price2", postiive_dtos);
-        model.addAttribute("positive", negative_news);
-        model.addAttribute("negative", positive_news);
+        // model.addAttribute("positive", negative_news);
+        // model.addAttribute("negative", positive_news);
 
 
 
