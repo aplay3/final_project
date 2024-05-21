@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.nasdaq.model.DAO.PredictpriceDao;
-import com.example.nasdaq.model.DTO.DailyUpdateDto;
 import com.example.nasdaq.model.DTO.PredictpriceDto;
-import com.example.nasdaq.model.Entity.DailyUpdateEntity;
 import com.example.nasdaq.model.Entity.PredictpriceEntity;
 import com.example.nasdaq.service.PredictpriceService;
 import java.util.List;
