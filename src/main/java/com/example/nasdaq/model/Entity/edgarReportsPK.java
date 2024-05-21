@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @EqualsAndHashCode
 @Embeddable
-public class weeklyUpdatesPK implements Serializable{
+public class edgarReportsPK implements Serializable{
     private String ticker;
-    private String weeklydate;
+    private String date;
 }

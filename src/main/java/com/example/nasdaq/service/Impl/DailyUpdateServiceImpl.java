@@ -30,6 +30,10 @@ public class DailyUpdateServiceImpl implements DailyUpdateService{
             dto.setName(entity.getName());
             dto.setNews_summary(entity.getNews_summary());
             dto.setNews_sentiment(entity.getNews_sentiment());
+            dto.setMarket_cap(entity.getMarket_cap());
+            dto.setEnterprise_val(entity.getEnterprise_val());
+            dto.setPer(entity.getPer());
+            dto.setPbr(entity.getPbr());
             
             dtos.add(dto);
         }
@@ -47,6 +51,10 @@ public class DailyUpdateServiceImpl implements DailyUpdateService{
             dto.setName(entity.getName());
             dto.setNews_summary(entity.getNews_summary());
             dto.setNews_sentiment(entity.getNews_sentiment());
+            dto.setMarket_cap(entity.getMarket_cap());
+            dto.setEnterprise_val(entity.getEnterprise_val());
+            dto.setPer(entity.getPer());
+            dto.setPbr(entity.getPbr());
         return dto;
     }
 

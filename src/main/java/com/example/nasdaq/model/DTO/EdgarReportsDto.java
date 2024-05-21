@@ -11,13 +11,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class WeeklyUpdateDto {
+public class EdgarReportsDto {
     
     private String ticker;
 
-    private String weeklydate;
+    private String date;
 
     private String name;
     
-    private String edgar_summary;
+    private String summary_10q;
+    private String summary_10k;
+
 }

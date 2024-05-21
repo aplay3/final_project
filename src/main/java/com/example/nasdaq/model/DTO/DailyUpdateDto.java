@@ -1,5 +1,6 @@
 package com.example.nasdaq.model.DTO;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,9 +23,9 @@ public class DailyUpdateDto {
 
     private String news_sentiment;
 
-    private int market_cap;
+    private String market_cap;
 
-    private int enterprise_val;
+    private String enterprise_val;
 
     private double per;
 
