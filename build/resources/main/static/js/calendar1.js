@@ -8,20 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         eventTimeFormat: { // 이벤트 시간 형식 설정
             hour: 'numeric',
             minute: '2-digit',
-<<<<<<< HEAD
             hour12: false, // AM/PM 형식으로 시간 표시
         },
         fixedWeekCount: false,
-=======
-            hour12: false ,// AM/PM 형식으로 시간 표시 
-        },
->>>>>>> origin/dev
         dayMaxEventRows: true, // 하루에 최대 표시할 일정 행 수
         views: {
             dayGrid: {
                 dayMaxEventRows: 2 // 월별 캘린더에서도 일정 행 수 제한
             }
-<<<<<<< HEAD
         },
         eventMouseEnter: function(info) {
             var eventObj = info.event;
@@ -67,9 +61,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 });
-=======
-        }
-    });
-    calendar.render();
-});
->>>>>>> origin/dev

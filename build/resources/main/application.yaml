@@ -4,13 +4,10 @@ server:
         # 한글깨짐 처리 
         encoding:
             force-response: true
-<<<<<<< HEAD
-=======
     error:
         whitelabel:
             enabled: false
         path: /errors
->>>>>>> origin/dev
 
 spring:
     output:
@@ -35,12 +32,9 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
-<<<<<<< HEAD
-=======
             transaction:
                 jta:
                     platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
->>>>>>> origin/dev
         properties:
             hibernate:
                 show_sql: true

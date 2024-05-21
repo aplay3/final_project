@@ -1,6 +1,5 @@
 /* 전체 캘린더 스타일 */
 #calendar {
-<<<<<<< HEAD
     width: 100%; /* 전체 너비 사용 */
     height: 95vh; /* 전체 높이 사용 */
     display: flex;
@@ -51,31 +50,3 @@
 :root {
     --fc-button-bg-color: white;
     }
-=======
-    width: 90%; /* 전체 너비 사용 */
-      height: 95vh; /* 전체 높이 사용 */
-      display: flex;
-      justify-content: center;
-}
-
-
-/* 이벤트 스타일 */
-.fc-event {
-    background-color: #d5a6bd; /* 이벤트 배경색 */
-    color: #ffffff; /* 이벤트 텍스트 색상 */
-    border-radius: 5px; /* 이벤트 테두리를 둥글게 만듭니다 */
-    padding: 5px; /* 이벤트 내부 여백 */
-    font-size: 13x; /* 이벤트 텍스트 크기 */
-}
-:root {
-    --fc-button-text-color: black;
-}
-:root {
-    --fc-button-bg-color: white;
-}
-
-
-.fc-daygrid-day {
-    height: 125px; /* 원하는 높이로 조정합니다. */
-}
->>>>>>> origin/dev
