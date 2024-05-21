@@ -3,7 +3,10 @@
   $('#defaultconfig').maxlength({
     warningClass: "badge mt-1 badge-success",
     limitReachedClass: "badge mt-1 badge-danger"
+<<<<<<< HEAD
     
+=======
+>>>>>>> origin/dev
   });
 
   $('#defaultconfig-2').maxlength({
@@ -29,4 +32,8 @@
     warningClass: "badge mt-1 badge-success",
     limitReachedClass: "badge mt-1 badge-danger"
   });
+<<<<<<< HEAD
 })(jQuery);
+=======
+})(jQuery);
+>>>>>>> origin/dev

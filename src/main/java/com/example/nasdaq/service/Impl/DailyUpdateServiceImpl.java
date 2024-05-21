@@ -30,6 +30,10 @@ public class DailyUpdateServiceImpl implements DailyUpdateService{
             dto.setName(entity.getName());
             dto.setNews_summary(entity.getNews_summary());
             dto.setNews_sentiment(entity.getNews_sentiment());
+            dto.setMarket_cap(entity.getMarket_cap());
+            dto.setEnterprise_val(entity.getEnterprise_val());
+            dto.setPer(entity.getPer());
+            dto.setPbr(entity.getPbr());
             
             dtos.add(dto);
         }
@@ -47,9 +51,33 @@ public class DailyUpdateServiceImpl implements DailyUpdateService{
             dto.setName(entity.getName());
             dto.setNews_summary(entity.getNews_summary());
             dto.setNews_sentiment(entity.getNews_sentiment());
+            dto.setMarket_cap(entity.getMarket_cap());
+            dto.setEnterprise_val(entity.getEnterprise_val());
+            dto.setPer(entity.getPer());
+            dto.setPbr(entity.getPbr());
         return dto;
     }
 
-    
+    @Override
+    public String getMostRecentDate() {
+        // TODO Auto-generated method stub
+        String recent_date = dailyUpdatesDao.getMostRecentDate();
+        return recent_date;
+    }
+
+    @Override
+    public List<String> getTickersContaining(String ticker) {
+        // TODO Auto-generated method stub
+        List<DailyUpdateEntity> entities = dailyUpdatesDao.getTickersContaining(ticker);
+        List<String> tickers = new ArrayList<>();
+        for(DailyUpdateEntity entity : entities) {
+            String tick = entity.getDailyUpdatesPK().getTicker();
+            // 중복으로 들어오는 값 제거
+            if(!tickers.contains(tick)){
+                tickers.add(tick);
+            }
+        }
+        return tickers;
+    }
 
 }
