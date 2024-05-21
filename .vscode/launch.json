@@ -3,6 +3,10 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
             "name": "Spring Boot-NasdaqApplication<final_project>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -10,14 +14,20 @@
             "projectName": "final_project",
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
     "configurations": [
         {
             "type": "java",
+=======
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
             "name": "Spring Boot-NasdaqApplication<nasdaq>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.nasdaq.NasdaqApplication",
             "projectName": "nasdaq",
+<<<<<<< HEAD
+>>>>>>> origin/dev
+=======
 =======
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.

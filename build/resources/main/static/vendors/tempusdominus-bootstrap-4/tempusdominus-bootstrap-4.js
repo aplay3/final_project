@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
 /*!@preserve
  * Tempus Dominus Bootstrap4 v5.39.0 (https://tempusdominus.github.io/bootstrap-4/)
  * Copyright 2016-2020 Jonathan Peterson and contributors
@@ -30,6 +33,7 @@ if ((version[0] <= 2 && version[1] < 17) || (version[0] >= 3)) {
 
 +function () {
 
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 /*!@preserve
@@ -65,6 +69,8 @@ if ((version[0] <= 2 && version[1] < 17) || (version[0] >= 3)) {
 =======
 >>>>>>> origin/feature_main
 >>>>>>> origin/dev
+=======
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -3458,12 +3464,16 @@ var TempusDominusBootstrap4 = function ($) {
     return TempusDominusBootstrap4;
   }(DateTimePicker);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
   /**
   * ------------------------------------------------------------------------
   * jQuery
   * ------------------------------------------------------------------------
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
   /**
@@ -3474,6 +3484,8 @@ var TempusDominusBootstrap4 = function ($) {
 =======
 >>>>>>> origin/feature_main
 >>>>>>> origin/dev
+=======
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
   */
 
 
@@ -3552,6 +3564,7 @@ var TempusDominusBootstrap4 = function ($) {
 
   return TempusDominusBootstrap4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }(jQuery);
 
 }();
@@ -3566,3 +3579,8 @@ var TempusDominusBootstrap4 = function ($) {
 }();
 >>>>>>> origin/feature_main
 >>>>>>> origin/dev
+=======
+}(jQuery);
+
+}();
+>>>>>>> b63dffbab14813c008f255318ee99fc59740f9e8
