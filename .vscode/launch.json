@@ -2,11 +2,19 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Spring Boot-NasdaqApplication<final_project>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.nasdaq.NasdaqApplication",
             "projectName": "final_project",
+=======
+            "name": "Spring Boot-NasdaqApplication<nasdaq>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.nasdaq.NasdaqApplication",
+            "projectName": "nasdaq",
+>>>>>>> origin/dev
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

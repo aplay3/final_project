@@ -11,13 +11,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class WeeklyUpdateDto {
-    
+public class PredictpriceDto {
     private String ticker;
 
-    private String weeklydate;
+    private String dailydate;
 
-    private String name;
-    
-    private String edgar_summary;
+    private float price;
+
+    private float compare_rate;
 }

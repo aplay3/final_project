@@ -30639,4 +30639,26 @@ div.tagsinput span.tag a {
   }
 }
 
+#search-container {
+  position: relative;
+}
+
+#search-results {
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  background: white;
+  width: 100%;
+  top: 100%; /* 검색창 바로 아래에 위치 */
+  z-index: 1000;
+}
+
+.search-item {
+  padding: 8px;
+  cursor: pointer;
+}
+.search-item:hover {
+  background-color: #f0f0f0;
+}
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
