@@ -47,72 +47,6 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-<<<<<<< HEAD
-=======
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="/images/faces/face28.jpg" alt="profile"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
-              <a class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
->>>>>>> origin/dev
           <li class="nav-item nav-settings d-none d-lg-flex">
             <a class="nav-link" href="#">
               <i class="icon-ellipsis"></i>
@@ -400,7 +334,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages/documentation/documentation.html">
+            <a class="nav-link" href="/v1/nasdaq/calendar">
               <i class="mdi mdi-calendar menu-icon"></i>
               <span class="menu-title">Calendar</span>
             </a>
@@ -462,7 +396,24 @@
                   <div class="card-body mb-3">
                     <h3 class="mb-4" ><b>상승종목</b></h3>
                     <div class="font-weight-500">
+                      {{#price2}}
+                      {{#negative}}
                       <div class="card mb-4">
+                        <div class="row">
+                          <div class="card card-body">
+                              <h3  align="center"> {{ticker}}</h3>
+                          </div>
+                          <div class = "card card-body" >
+                            <p class="mb-2 mb-xl-0"> {{summary}}</p>
+                          </div>
+                          <div class="card card-body card-inverse-danger  ">
+                            <h3 align="center"> {{compare_rate}}%</h3>
+                          </div>
+                        </div>
+                      </div>
+                      {{/price2}}
+                      {{/negative}}
+                      <!-- <div class="card mb-4">
                         <div class="row">
                           <div class="card card-body">
                               <h3  align="center"> AAPL</h3>
@@ -487,20 +438,7 @@
                             <h3 align="center"> +5.32%</h3>
                           </div>
                         </div>
-                      </div>
-                      <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> AAPL</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-danger  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div>
+                      </div> -->
                       
                     </div>
                   </div>
@@ -514,7 +452,24 @@
                   <div class="card-body mb-3">
                     <h3 class="mb-4"><b>하락종목</b></h3>
                     <div class="font-weight-500">
+                      {{#price}}
+                      {{#positive}}
                       <div class="card mb-4">
+                        <div class="row">
+                          <div class="card card-body">
+                              <h3  align="center"> {{ticker}}</h3>
+                          </div>
+                          <div class = "card card-body" >
+                            <p class="mb-2 mb-xl-0"> {{summary}}</p>
+                          </div>
+                          <div class="card card-body card-inverse-primary  ">
+                            <h3 align="center"> {{compare_rate}}%</h3>
+                          </div>
+                        </div>
+                      </div>
+                      {{/price}}
+                      {{/positive}}
+                      <!-- <div class="card mb-4">
                         <div class="row">
                           <div class="card card-body">
                               <h3  align="center"> MSFT</h3>
@@ -539,20 +494,7 @@
                             <h3 align="center"> +5.32%</h3>
                           </div>
                         </div>
-                      </div>
-                      <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> MSFT</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-primary  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div>
+                      </div> -->
                       
                     </div>
                   </div>
