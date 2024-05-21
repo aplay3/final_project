@@ -71,7 +71,7 @@
 //     return resultString;
 // }
 
-const money =  document.getElementById("from-input")
+const money =  document.getElementById("frominput")
 const first = 'AUD'
 const second = 'USD'
 //const first = document.getElementById("from-currency-list1").value

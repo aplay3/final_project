@@ -14223,10 +14223,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 .badge-success, .preview-list .preview-item .preview-thumbnail .badge.badge-online {
   color: #fff;
   background-color: #57B657;
-<<<<<<< HEAD
   height: fit-content;
-=======
->>>>>>> origin/dev
 }
 
 a.badge-success:hover, .preview-list .preview-item .preview-thumbnail a.badge.badge-online:hover, a.badge-success:focus, .preview-list .preview-item .preview-thumbnail a.badge.badge-online:focus {
@@ -22046,11 +22043,7 @@ code {
   color: #010101;
   margin-bottom: 1.2rem;
   text-transform: capitalize;
-<<<<<<< HEAD
-  font-size: 1.125rem;
-=======
   font-size: 2rem;
->>>>>>> origin/dev
   font-weight: 600;
 }
 
@@ -30647,8 +30640,6 @@ div.tagsinput span.tag a {
   }
 }
 
-<<<<<<< HEAD
-=======
 #search-container {
   position: relative;
 }
@@ -30671,5 +30662,4 @@ div.tagsinput span.tag a {
 .search-item:hover {
   background-color: #f0f0f0;
 }
->>>>>>> origin/dev
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
