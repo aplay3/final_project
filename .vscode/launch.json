@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-NasdaqApplication<nasdaq>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.nasdaq.NasdaqApplication",
+            "projectName": "nasdaq",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
