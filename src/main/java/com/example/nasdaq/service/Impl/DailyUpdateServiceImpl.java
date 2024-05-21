@@ -58,6 +58,26 @@ public class DailyUpdateServiceImpl implements DailyUpdateService{
         return dto;
     }
 
-    
+    @Override
+    public String getMostRecentDate() {
+        // TODO Auto-generated method stub
+        String recent_date = dailyUpdatesDao.getMostRecentDate();
+        return recent_date;
+    }
+
+    @Override
+    public List<String> getTickersContaining(String ticker) {
+        // TODO Auto-generated method stub
+        List<DailyUpdateEntity> entities = dailyUpdatesDao.getTickersContaining(ticker);
+        List<String> tickers = new ArrayList<>();
+        for(DailyUpdateEntity entity : entities) {
+            String tick = entity.getDailyUpdatesPK().getTicker();
+            // 중복으로 들어오는 값 제거
+            if(!tickers.contains(tick)){
+                tickers.add(tick);
+            }
+        }
+        return tickers;
+    }
 
 }

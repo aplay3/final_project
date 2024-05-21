@@ -34,4 +34,10 @@ public class detailsController {
 
     }
 
+    @GetMapping("/search")
+    public String searchTicker(@RequestParam String ticker){
+        String recent_date = dailyUpdateService.getMostRecentDate();
+        String url = String.format("/v1/nasdaq/details?ticker=%s&dailydate=%s", ticker, recent_date);
+        return "redirect:" + url;
+    }
 }

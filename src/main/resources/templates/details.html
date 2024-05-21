@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/vendors/feather/feather.css">
   <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -18,6 +19,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -27,24 +29,54 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/images/logo_nasdaq.png" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/images/logo_mini_nasdaq.png" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-start">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
         <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
+          
+          <form id="search-form" action="/v1/nasdaq/search" method="GET">
+            <li class="nav-item nav-search d-none d-lg-block">
+              <div class="input-group" id="search-container">
+                <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                  <span class="input-group-text" id="search">
+                    <i class="icon-search"></i>
+                  </span>
+                </div>
+                <input type="text" name="ticker" class="form-control" id="ticker-search" placeholder="Search now" aria-label="search" aria-describedby="search">
+                <div id="search-results"></div>
               </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
+              <script>
+                document.getElementById('ticker-search').addEventListener('input', function() {
+                    const query = this.value;
+                    if (query.length > 0) { // 최소 1글자 이상 입력 시 요청
+                        fetch(`/api/v1/nasdaq/search?ticker=${query}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                const resultsContainer = document.getElementById('search-results');
+                                resultsContainer.innerHTML = '';
+                                const recent_date = data.recent_date;
+                                data.tickers.forEach(ticker => {
+                                    const div = document.createElement('div');
+                                    div.classList.add('search-item');
+                                    div.textContent = ticker;
+                                    div.addEventListener('click', () => {
+                                        window.location.href = `/v1/nasdaq/details?ticker=${ticker}&dailydate=${recent_date}`;
+                                    });
+                                    resultsContainer.appendChild(div);
+                                });
+                            })
+                            .catch(error => console.error('Error fetching tickers:', error));
+                    } else {
+                        document.getElementById('search-results').innerHTML = '';
+                    }
+                });
+            </script>
+            </li>
+          </form>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-settings d-none d-lg-flex">
@@ -114,6 +146,18 @@
                 <li class="nav-item"> <a class="nav-link" href="/pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/documentation/documentation.html">
+              <i class="mdi mdi-calendar menu-icon"></i>
+              <span class="menu-title">Calendar</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/documentation/documentation.html">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Market Indicator</span>
+            </a>
           </li>
         </ul>
       </nav>
