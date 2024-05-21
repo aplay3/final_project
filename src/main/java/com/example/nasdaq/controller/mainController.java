@@ -52,21 +52,4 @@ public class mainController {
         
         return "index";
     }
-
-    // @GetMapping("/many")
-    // public String getBookList(Model model) {
-        
-    //     List<BookDto> bookList = new ArrayList<BookDto>();
-
-    //     for(int i=1; i<=5; i++){
-    //         BookDto book = new BookDto(
-    //             (long) i, (i<3) ? true : false, "book"+i, "author"+i, (double)i*10000
-    //         );
-    //         bookList.add(book);
-    //     }
-    //     model.addAttribute("bookList", bookList);
-
-    //     return "bookList";
-    // }
-    
 }

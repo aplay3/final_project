@@ -13,10 +13,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="WeeklyUpdateEntity")
-@Table(name="weekly_update")
+@Entity(name="EdgarReportsEntity")
+@Table(name="edgar_reports")
 // @IdClass(weeklyUpdatesPK.class)
-public class WeeklyUpdateEntity {
+public class EdgarReportsEntity {
     
     // @Id
     // @NotBlank
@@ -29,10 +29,11 @@ public class WeeklyUpdateEntity {
     // private Date weeklydate;
 
     @EmbeddedId
-    private weeklyUpdatesPK weeklyUpdatesPK;
+    private edgarReportsPK edgarReportsPK;
 
     @NotBlank
     private String name;
     
-    private String edgar_summary;
+    private String summary_10q;
+    private String summary_10k;
 }
