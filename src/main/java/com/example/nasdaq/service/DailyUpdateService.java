@@ -9,4 +9,8 @@ public interface DailyUpdateService {
     public DailyUpdateDto getOneDailyInfo(String ticker, String dailydate);
 
     public List<DailyUpdateDto> getAllDailyInfo();
+
+    public String getMostRecentDate();
+
+    public List<String> getTickersContaining(String ticker);
 }

@@ -10,4 +10,8 @@ public interface DailyUpdatesDao {
     public DailyUpdateEntity getOneDailyInfo(String ticker, String dailydate);
 
     public List<DailyUpdateEntity> getAllDailyInfo();
+
+    public String getMostRecentDate();
+
+    public List<DailyUpdateEntity> getTickersContaining(String ticker);
 }
