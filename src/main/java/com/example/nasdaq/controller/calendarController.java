@@ -6,13 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/v1/nasdaq")
 @Controller
-public class mainController {
-    @GetMapping("/index")
-    public String mainPage(){
-        return "index";
-    }
+public class calendarController {
+
     @GetMapping("/calendar")
-    public String move_calendar(){
+    public String calendarPage(){
         return "calendar";
     }
 }
