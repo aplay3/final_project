@@ -9,11 +9,11 @@ import com.example.nasdaq.model.Entity.PredictpricePK;
 
 public interface PredictpriceRepository  extends JpaRepository<PredictpriceEntity, PredictpricePK>{
     
-    @Query(value = "select * from predict_price p order by p.compare_rate desc limit 3", nativeQuery=true)
+    @Query(value = "select * from predict_price p where dailydate like \"2024-05-22%\" order by p.compare_rate desc limit 3", nativeQuery=true)
     List<PredictpriceEntity> findTop3ByorderRateDesc();
 
     
-    @Query(value="SELECT * from predict_price p order by p.compare_rate limit 3", nativeQuery=true)
+    @Query(value="SELECT * from predict_price p where dailydate like \"2024-05-22%\"  order by p.compare_rate limit 3", nativeQuery=true)
     List<PredictpriceEntity> findTop3ByorderRateAsc();
 
 }
