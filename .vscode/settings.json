@@ -1,9 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "automatic",
-    "cmake.configureOnOpen": true,
-    "cSpell.languageSettings": [
-        
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.debug.settings.onBuildFailureProceed": true
-}

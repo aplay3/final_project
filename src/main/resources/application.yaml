@@ -4,10 +4,10 @@ server:
         # 한글깨짐 처리 
         encoding:
             force-response: true
-    error:
-        whitelabel:
-            enabled: false
-        path: /errors
+    # error:
+    #     whitelabel:
+    #         enabled: false
+    #     path: /errors
 
 spring:
     output:
