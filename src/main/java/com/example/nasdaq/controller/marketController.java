@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.nasdaq.model.DTO.MarketDto;
 import com.example.nasdaq.model.Repository.MarketRepository;
+import com.example.nasdaq.service.DailyUpdateService;
 import com.example.nasdaq.service.MarketService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,12 +28,15 @@ public class marketController {
     @Autowired
     private MarketService marketService;
 
+    @Autowired
+    private DailyUpdateService dailyUpdateService;
 
-    @GetMapping("/market/query")
-    public String marketPage(Model model, @RequestParam String dt, @RequestParam String marketTitle, String marketName){
+
+    @GetMapping("/market")
+    public String marketPage(Model model, @RequestParam(defaultValue = "Futures") String marketTitle, String marketName){
         List<MarketDto> dtos = marketService.findAllByMarketTitle(marketTitle);
         String title = dtos.get(0).getMarketTitle().toString();
-        String date = dtos.get(0).getDt().toString();
+    
         String close = dtos.get(0).getMarketClose().toString();
 
         // MarketDto dto = marketService.findAllMarketCurrency(marketName); //수정
@@ -41,7 +45,7 @@ public class marketController {
 
         model.addAttribute("marketList", dtos);
         model.addAttribute("marketTitle", title);
-        model.addAttribute("marketDt", date);
+        model.addAttribute("marketDt", dailyUpdateService.getMostRecentDate());
         model.addAttribute("marketClose", close);
 
         
