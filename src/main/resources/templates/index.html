@@ -340,7 +340,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages/documentation/documentation.html">
+            <a class="nav-link" href="/v1/nasdaq/market">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Market Indicator</span>
             </a>
@@ -378,73 +378,26 @@
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card tale-bg">
-                <!-- <div class="card-people mt-auto">
-                  <img src="images/dashboard/people.svg" alt="people">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
-                      </div>
-                      <div class="ml-2">
-                        <h4 class="location font-weight-normal">Bangalore</h4>
-                        <h6 class="font-weight-normal">India</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-                
                   <div class="card-body mb-3">
                     <h3 class="mb-4" ><b>상승종목</b></h3>
                     <div class="font-weight-500">
-                      {{#price2}}
-                      
+                      {{#positive}}
                       <div class="card mb-4">
                         <div class="row">
                           <div class="card card-body">
-                              <h3  align="center"> {{ticker}}</h3>
+                              <a href="/v1/nasdaq/index_detail?ticker={{ticker}}"> <h3  align="center"> {{ticker}}</h3></a>
                           </div>
                           <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> asdfasdfsdf</p>
+                            <p class="mb-2 mb-xl-0"> {{news_summary}}</p>
                           </div>
                           <div class="card card-body card-inverse-danger  ">
                             <h3 align="center"> {{compare_rate}}%</h3>
                           </div>
                         </div>
                       </div>
-                      {{/price2}}
-                      
-                      <!-- <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> AAPL</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-danger  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> AAPL</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-danger  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div> -->
-                      
+                      {{/positive}}
                     </div>
                   </div>
-                    
-                  
-                
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
@@ -452,57 +405,30 @@
                   <div class="card-body mb-3">
                     <h3 class="mb-4"><b>하락종목</b></h3>
                     <div class="font-weight-500">
-                      {{#price}}
+                      
+                      {{#negative}}
                       
                       <div class="card mb-4">
                         <div class="row">
                           <div class="card card-body">
-                              <h3  align="center"> {{ticker}}</h3>
+                            <a href="/v1/nasdaq/index_detail?ticker={{ticker}}"><h3  align="center"> {{ticker}}</h3></a>
                           </div>
                           <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> dsfasdfasdfasdfasdf</p>
+                            <p class="mb-2 mb-xl-0"> {{news_summary}}</p>
                           </div>
                           <div class="card card-body card-inverse-primary  ">
                             <h3 align="center"> {{compare_rate}}%</h3>
                           </div>
                         </div>
                       </div>
-                      {{/price}}
+                      {{/negative}}
                       
-                      <!-- <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> MSFT</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-primary  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-4">
-                        <div class="row">
-                          <div class="card card-body">
-                              <h3  align="center"> MSFT</h3>
-                          </div>
-                          <div class = "card card-body" >
-                            <p class="mb-2 mb-xl-0"> 애플이 오늘 상당히 안좋음</p>
-                          </div>
-                          <div class="card card-body card-inverse-primary  ">
-                            <h3 align="center"> +5.32%</h3>
-                          </div>
-                        </div>
-                      </div> -->
+                      
                       
                     </div>
                   </div>
-                    
-                  
-                
               </div>
-          </div>
+            </div>
           
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">

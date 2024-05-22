@@ -14,14 +14,14 @@ public class PredictpriceDaoImpl implements PredictpriceDao{
     @Autowired
     private PredictpriceRepository PredictpriceRepository;
     @Override
-    public List<PredictpriceEntity> findTop3predict_price() {
+    public List<PredictpriceEntity> findButtom3predict_price() {
         // TODO Auto-generated method stub
        
         return PredictpriceRepository.findTop3ByorderRateAsc();
     }
 
     @Override
-    public List<PredictpriceEntity> findButtom3predict_price() {
+    public List<PredictpriceEntity> findTop3predict_price() {
         // TODO Auto-generated method stub
        
         return PredictpriceRepository.findTop3ByorderRateDesc();
