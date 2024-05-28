@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>종목 상세</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/images/favicon.png" />
+
+  <style>
+    .detailed-report-carousel {
+      position: relative;
+    }
+    
+    .slider-wrapper {
+      overflow: hidden;
+    }
+    
+    .slider-container {
+      display: flex;
+    }
+    
+    .slider-item {
+      flex: 0 0 100%; /* 한 번에 하나의 요소만 보이도록 설정 */
+    }
+    
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #f8f9fa;
+      border: none;
+      color: #495057;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .prev-btn:hover, .next-btn:hover {
+      background-color: #e9ecef;
+    }
+    
+    .prev-btn {
+      left: 10px;
+    }
+    
+    .next-btn {
+      right: 10px;
+    }
+  </style>
+
+</head>
+<body>
+  
+
+  <div class="col-md-6 grid-margin">
+    <div id="newsSummary" class="detailed-report-carousel position-static pt-2">
+      <div class="slider-wrapper">
+        <div class="slider-container">
+          {{#news_summary}}
+          <div class="slider-item">
+            <div class="card card-gemini2">
+              <div class="card-body">
+                <p class="font-weight-large">요약</p>
+                <div class="card">
+                  <div class="card-body">
+                    <p class="font-weight-medium">{{.}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/news_summary}}
+        </div>
+      </div>
+      <button class="prev-btn">&#10094;</button>
+      <button class="next-btn">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- plugins:js -->
+  <script>
+// JavaScript 코드
+document.addEventListener("DOMContentLoaded", function() {
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const sliderContainer = document.querySelector(".slider-container");
+  const sliderItems = document.querySelectorAll(".slider-item");
+
+  let currentIndex = 0;
+  const totalItems = sliderItems.length;
+
+  // 다음 요소로 이동하는 함수
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateSlider();
+  }
+
+  // 이전 요소로 이동하는 함수
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateSlider();
+  }
+
+  // 슬라이더 업데이트 함수
+  function updateSlider() {
+    const itemWidth = sliderItems[0].offsetWidth;
+    const newPosition = -currentIndex * itemWidth;
+    sliderContainer.style.transform = `translateX(${newPosition}px)`;
+  }
+
+  // 이벤트 리스너 등록
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+});
+
+
+  </script>
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="/vendors/chart.js/Chart.min.js"></script>
+  <script src="/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="/js/dataTables.select.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script>
+  var isFirstSlide = true;
+</script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
+  <script src="/js/template.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
